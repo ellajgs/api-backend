@@ -9,4 +9,14 @@ const index = async (req, res) => {
   }
 };
 
-module.exports = { index };
+const search = async (req, res) => {
+    const name = req.params.name.toLowerCase()
+  try {
+    const fruit = await Fruit.show(name);
+    res.status(200).send(fruit);
+  } catch (err) {
+    res.status(404).send({ error: err });
+  }
+};
+
+module.exports = { index, search };

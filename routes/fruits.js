@@ -5,4 +5,6 @@ const fruits = require("../controllers/fruits")
 
 router.get('/', fruits.index)
 
+router.get('/:name', fruits.search)
+
 module.exports = router

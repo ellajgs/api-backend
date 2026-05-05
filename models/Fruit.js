@@ -13,6 +13,17 @@ class Fruit {
   static showAll() {
     return fruits.map((f) => new Fruit(f));
   }
+
+  static show(name){
+    const fruit = fruits.find((fruit) => fruit.name.toLowerCase() === name)
+
+    if (fruit){
+        return new Fruit(fruit)
+        console.log(fruit)
+    } else {
+        return "fruit not found"
+    }
+  }
 }
 
 module.exports = Fruit
