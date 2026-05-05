@@ -14,3 +14,5 @@ class Fruit {
     return fruits.map((f) => new Fruit(f));
   }
 }
+
+module.exports = Fruit
