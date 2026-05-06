@@ -19,9 +19,8 @@ class Fruit {
 
     if (fruit){
         return new Fruit(fruit)
-        console.log(fruit)
     } else {
-        return "fruit not found"
+        throw "fruit not found"
     }
   }
 }
