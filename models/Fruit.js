@@ -50,6 +50,7 @@ class Fruit {
       updatedFruit.family = data.family;
       updatedFruit.genus = data.genus;
       updatedFruit.order = data.order;
+      updatedFruit.id = data.id;
       return new Fruit(updatedFruit);
     } else {
       throw "fruit not found";
