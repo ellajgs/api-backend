@@ -39,6 +39,35 @@ class Fruit {
       return new Fruit(newFruit);
     }
   }
+
+  update(data) {
+    const updatedFruit = fruits.find(
+      (fruit) => fruit.name.toLowerCase() === this.name.toLowerCase(),
+    );
+
+    if (updatedFruit) {
+      updatedFruit.name = data.name;
+      updatedFruit.family = data.family;
+      updatedFruit.genus = data.genus;
+      updatedFruit.order = data.order;
+      return new Fruit(updatedFruit);
+    } else {
+      throw "fruit not found";
+    }
+  }
+
+  destroy(fruit) {
+    const deletedFruit = fruits.find(
+      (fruit) => fruit.name.toLowerCase() === this.name.toLowerCase(),
+    );
+
+    if (deletedFruit) {
+      const index = fruits.indexOf(deletedFruit);
+      fruits.splice(index, 1);
+    } else {
+      throw "fruit not found";
+    }
+  }
 }
 
 module.exports = Fruit;

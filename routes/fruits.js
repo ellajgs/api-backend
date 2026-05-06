@@ -6,5 +6,7 @@ const fruits = require("../controllers/fruits")
 router.get('/', fruits.index)
 router.get('/:name', fruits.search)
 router.post('/', fruits.create)
+router.patch('/:name', fruits.update)
+router.delete('/:name', fruits.destroy)
 
 module.exports = router
