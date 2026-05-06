@@ -56,7 +56,7 @@ class Fruit {
     }
   }
 
-  destroy(fruit) {
+  destroy() {
     const deletedFruit = fruits.find(
       (fruit) => fruit.name.toLowerCase() === this.name.toLowerCase(),
     );
