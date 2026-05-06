@@ -14,15 +14,31 @@ class Fruit {
     return fruits.map((f) => new Fruit(f));
   }
 
-  static show(name){
-    const fruit = fruits.find((fruit) => fruit.name.toLowerCase() === name)
+  static show(name) {
+    const fruit = fruits.find((fruit) => fruit.name.toLowerCase() === name);
 
-    if (fruit){
-        return new Fruit(fruit)
+    if (fruit) {
+      return new Fruit(fruit);
     } else {
-        throw "fruit not found"
+      throw "fruit not found";
+    }
+  }
+
+  static create(data) {
+    const newFruit = data;
+    console.log(newFruit);
+    const fruit = fruits.find(
+      (fruit) => fruit.name.toLowerCase() === data.name.toLowerCase(),
+    );
+
+    if (fruit) {
+      throw "this fruit already exists";
+    } else {
+      newFruit["id"] = fruits.length + 1;
+      fruits.push(newFruit);
+      return new Fruit(newFruit);
     }
   }
 }
 
-module.exports = Fruit
+module.exports = Fruit;

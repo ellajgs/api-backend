@@ -10,7 +10,7 @@ const index = async (req, res) => {
 };
 
 const search = async (req, res) => {
-    const name = req.params.name.toLowerCase()
+  const name = req.params.name.toLowerCase();
   try {
     const fruit = await Fruit.show(name);
     res.status(200).send(fruit);
@@ -19,4 +19,13 @@ const search = async (req, res) => {
   }
 };
 
-module.exports = { index, search };
+const create = async (req, res) => {
+  try {
+    const newFruit = await Fruit.create(req.body);
+    res.status(201).send(newFruit);
+  } catch (err) {
+    res.status(409).send({ error: err });
+  }
+};
+
+module.exports = { index, search, create };
